@@ -1,7 +1,12 @@
+import AddUser from './components/Users/AddUser';
 import './App.css';
 
 function App() {
-  return <div className='App'>Welcome!</div>;
+  return (
+    <div>
+      <AddUser />
+    </div>
+  );
 }
 
 export default App;
