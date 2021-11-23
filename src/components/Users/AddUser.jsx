@@ -4,14 +4,19 @@ import Button from '../UI/Button';
 import classes from './AddUser.module.css';
 
 const AddUser = (props) => {
-  const [enteredUsername, setUsername] = useState('');
+  const [enteredUsername, setEnteredUsername] = useState('');
+  const [enteredAge, setEnteredAge] = useState('');
 
   const addUserHandler = (e) => {
     e.preventDefault();
   };
 
   const usernameChangeHandler = (e) => {
-    setUsername(e.target.value);
+    setEnteredUsername(e.target.value);
+  };
+
+  const ageChangeHandler = (e) => {
+    setEnteredAge(e.target.value);
   };
 
   return (
@@ -20,7 +25,7 @@ const AddUser = (props) => {
         <label htmlFor='username'>Username</label>
         <input id='username' type='text' onChange={usernameChangeHandler} />
         <label htmlFor='age'>Age (Years)</label>
-        <input id='age' type='number' />
+        <input id='age' type='number' onChange={ageChangeHandler} />
         <Button type='submit'>Add User</Button>
       </form>
     </Card>
